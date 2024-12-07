@@ -1,0 +1,133 @@
+/* Global body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2C3E50; /* Dark background for the page */
+    color: #ecf0f1; /* Light text color */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh; /* Ensure body takes full height */
+    flex-direction: column; /* Stack elements vertically */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Main container holding everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #34495e; /* Darker background for container */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: auto; /* Allow scrolling inside the container */
+}
+
+/* Title of the Game */
+.game-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+/* Game and Instructions side-by-side layout */
+.game-and-instructions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+/* Game grid and status section */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%; /* Adjust width of the grid container */
+    max-width: 100%; /* Prevent from overflowing */
+}
+
+/* Style for the 5x5 grid */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* Style for each square */
+.square {
+    width: 50px;
+    height: 50px;
+    background-color: white; /* Starts as "off" */
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Hover effect for squares */
+.square:hover {
+    transform: scale(1.1);  /* Slightly enlarge the square when hovered */
+}
+
+/* Class to toggle square's color to black ("on") */
+.is-on {
+    background-color: black;
+}
+
+/* Additional styles for squares when clicked (on state) */
+.is-on:hover {
+    transform: scale(1.1);  /* Slightly enlarge the black square when hovered */
+}
+
+/* Status section for Timer, Moves, and Last Modified date */
+.status {
+    text-align: center;
+    color: #ecf0f1;
+    font-size: 1.1rem;
+}
+
+/* Instructions box (on the right side of the grid) */
+.instructions-box {
+    background-color: #1abc9c; /* Teal background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%; /* Adjust width for better layout */
+    color: #2c3e50;
+    margin-left: 20px; /* Space between game grid and instructions */
+}
+
+/* Addendum section */
+.addendum {
+    padding: 20px;
+    background-color: #f39c12; /* Yellow background for Addendum */
+    border-radius: 10px;
+    color: #2c3e50;
+    width: 80%; /* Make addendum fit the page */
+    max-width: 1200px;
+    margin: 20px auto; /* Center the addendum box and give space between sections */
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ecf0f1;
+}
+
+/* Styling for the footer's last modified date */
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Heading Section -->
+        <h1 class="game-title">Let's Play Lights Out Game!</h1>
+
+        <!-- Game Grid and How to Play Section -->
+        <div class="game-and-instructions">
+            <!-- Game Grid -->
+            <div class="game-container">
+                <div id="grid"></div>
+                <div class="status">
+                    <p><strong>Time: <span id="timer">00:00</span></strong></p>
+                    <p><strong>Moves: <span id="moveCounter">0</span></strong></p>
+                    <p><strong>Last updated: <span id="lastModified"></span></strong></p>
+                </div>
+            </div>
+
+            <!-- How to Play Instructions Box -->
+            <div class="instructions-box">
+    <h2>How to Play:</h2>
+    <ul>
+        <li>The goal of the game is to turn off all the lights.</li>
+        <li>Each square on the grid represents a light that can be either "on" (black) or "off" (white).</li>
+        <li>Click on a square to toggle its state (from white to black or vice versa).</li>
+        <li>When you click a square, it will toggle its own state as well as the state of adjacent squares (up, down, left, right).</li>
+        <li>Keep clicking squares to turn off all the lights and win the game!</li>
+        <li>The puzzle starts in a random, but solvable configuration.</li>
+    </ul>
+</div>
+        </div>
+    </div>
+
+    <!-- Addendum Section placed below the game and instructions -->
+    <!-- Addendum Section -->
+<div class="addendum">
+    <h3>Addendum</h3>
+    <p>This Lights Out game was designed as a 5x5 grid, where each square can be toggled by clicking it. The puzzle starts randomly but is solvable, and the player must click the squares in the right order to turn off all the lights.</p>
+    
+    <h4>Challenges Faced:</h4>
+    <ul>
+        <li><strong>Generating a Solvable Puzzle:</strong> One of the main challenges was to generate a random, but solvable puzzle configuration. Simply randomizing the state of the squares could create unsolvable configurations. I had to implement a logic where each random configuration could be reversed to a solution, ensuring solvability.</li>
+        
+        <li><strong>Handling Adjacent Squares:</strong> The game rules required that when a square is clicked, it toggles its own state and also the state of the adjacent squares (up, down, left, right). Ensuring that these adjacent squares are properly toggled, and correctly implementing the logic, was a challenge.</li>
+
+        <li><strong>Win Condition and Pop-Up Alert:</strong> Implementing the win condition required checking whether all the squares were turned off. This was done by checking the state of all squares after each move. Once the puzzle was completed, a pop-up alert was displayed. Handling this logic required working with JavaScript intervals and event listeners effectively to check game completion status.</li>
+
+        <li><strong>Design and Responsiveness:</strong> I also focused on the design of the game, ensuring that the game grid was centered on the page, and that the instructions were placed next to the grid. Making the page responsive, so that it looks good on various screen sizes, was another challenge that required adjustments in the CSS layout.</li>
+
+        <li><strong>Timer and Move Counter:</strong> Adding the timer and the move counter involved setting up a JavaScript interval to track time as the player made moves. The timer needed to reset at the start of each new game, and the move counter updated whenever the player made a valid move by clicking a square.</li>
+
+        <li><strong>Game Restart:</strong> Another challenge was implementing the restart functionality. I added a button that resets the grid to a new solvable random configuration, resets the timer, and the move counter to start fresh.</li>
+        
+        <li><strong>Testing and Debugging:</strong> Testing the game for bugs was an important step. I encountered issues with event listeners not firing correctly in some scenarios and had to debug the code to ensure that clicking on the squares was always toggling the correct squares and states.</li>
+    </ul>
+    
+    <p>Despite the challenges, this project helped me learn more about JavaScript event handling, DOM manipulation, and logic implementation. It was an interesting experience to integrate all the pieces and create a fun and interactive game.</p>
+</div>
+
+    </div>
+
+    <!-- External JavaScript file -->
+    <script type="text/javascript" src="script.js"></script>
+
+    <!-- Last Modified Script -->
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
